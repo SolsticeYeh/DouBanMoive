@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="movie.aboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:movie"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState_001">
+                    <VisualState.Setters>
+                        <Setter Target="AboutMyStackPanel.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="AboutStackPanel.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="AboutStackPanel.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stackPanel.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>20,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="AppTextBlock.(FrameworkElement.FontSize)" Value="23"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_002">
+                    <VisualState.Setters>
+                        <Setter Target="AboutMyStackPanel.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualState_003">
+                    <VisualState.Setters>
+                        <Setter Target="AboutMyStackPanel.(UIElement.Visibility)" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" Foreground="Azure" VerticalAlignment="Center" Margin="14,0,0,0">关于应用</TextBlock>
+        <!--<Grid Grid.Row="1">
+            <Image Source="..\Assets\Square150x150Logo.scale-200.png" Height="100"></Image>
+        </Grid>-->
+        <Grid Grid.Row="1">
+            <StackPanel Name="AboutStackPanel" Margin="15">
+                <Image Margin="0,30,0,30" Source="..\Assets\Square150x150Logo.scale-200.png" Height="120" Width="120"></Image>
+                <StackPanel x:Name="stackPanel">
+                    <TextBlock Name="AppTextBlock" Margin="0,0,0,10" Text="豆瓣电影 For Windows 10" Foreground="#99F0FFFF" FontSize="22" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Text="Version 1.0" HorizontalAlignment="Center" Foreground="#77F0FFFF" FontSize="20"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Name="AboutMyStackPanel" Margin="0,0,0,20" VerticalAlignment="Bottom" >
+                <TextBlock Text="Power by 叶舟" FontSize="16" Foreground="#77F0FFFF" HorizontalAlignment="Center"></TextBlock>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="14" Foreground="#77F0FFFF" HorizontalAlignment="Center" VerticalAlignment="Center">特别鸣谢-</TextBlock>
+                    <HyperlinkButton Grid.Column="1" Content="豆瓣" NavigateUri="https://www.douban.com/" FontSize="14" Foreground="#77F0FFFF" HorizontalAlignment="Center"></HyperlinkButton>
+                </Grid>
+                <TextBlock Text="Copyright © 2016 All Right Reserved" FontSize="15" Foreground="#99F0FFFF" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
